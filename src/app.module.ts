@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsuarioModule } from './usuario/usuario.module';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { AuthModule } from './auth/auth.module';
 
 // conexao com o banco de dados atraves de TypeORM
 @Module({
@@ -12,11 +14,12 @@ import { UsuarioModule } from './usuario/usuario.module';
       username: 'root',
       password: 'root',
       database: 'db_arara_delivery',
-      entities: [],
+      entities: [Usuario],
       synchronize: true,
       // logging: true, //opcional
     }),
     UsuarioModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
