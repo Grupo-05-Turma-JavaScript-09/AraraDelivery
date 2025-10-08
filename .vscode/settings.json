@@ -1,0 +1,58 @@
+{
+    // =========================
+// FORMATADORES (Prettier como padrão)
+// =========================
+"[javascript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode" // usa Prettier para arquivos .js
+},
+"[html]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode" // usa Prettier para .html
+},
+"[typescriptreact]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode" // usa Prettier para .tsx
+},
+"[javascriptreact]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode" // usa Prettier para .jsx
+},
+"[typescript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode" // usa Prettier para .ts
+},
+"[css]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode" // usa Prettier para .css
+},
+// =========================
+// LINTING / AÇÕES AO SALVAR
+// =========================
+"eslint.validate": [
+  "javascript",
+  "typescript",
+  "javascriptreact",
+  "typescriptreact"
+], // linguagens que o ESLint vai validar
+"editor.codeActionsOnSave": {
+  "source.fixAll": "always", // aplica correções disponíveis de várias fontes (TS, ESLint, etc.)
+  "source.fixAll.eslint": "always", // executa eslint --fix ao salvar
+  "source.organizeImports": "always", // organiza imports (remove/ordena)
+  "source.addMissingImports": "always", // tenta adicionar imports faltantes (depende do language server)
+  "source.sortMembers": "always" // tenta ordenar membros (classes/objetos) — depende de suporte
+},
+// =========================
+// EDITOR (comportamento básico)
+// =========================
+"editor.tabSize": 2, // 2 espaços por tab
+"editor.mouseWheelZoom": true, // Ctrl + scroll altera o zoom da fonte
+"editor.linkedEditing": true, // edição ligada (ex: renomear tag abre a tag pareada)
+// =========================
+// AUTO-IMPORTS / TS & JS
+// =========================
+"javascript.suggest.autoImports": true, // sugere imports automaticamente no IntelliSense (JS)
+"typescript.suggest.autoImports": true, // sugere imports automaticamente no IntelliSense (TS)
+"javascript.updateImportsOnFileMove.enabled": "always", // atualiza imports ao mover/renomear arquivos (JS)
+"typescript.updateImportsOnFileMove.enabled": "always", // atualiza imports ao mover/renomear arquivos (TS)
+"javascript.preferences.importModuleSpecifier": "relative", // usa caminhos relativos nas imports (JS)
+"typescript.preferences.importModuleSpecifier": "relative", // usa caminhos relativos nas imports (TS)
+// =========================
+// CONFIG TS/JS EXPERIMENTAL
+// =========================
+"js/ts.implicitProjectConfig.experimentalDecorators": true // permite decorators em projetos implícitos
+}
