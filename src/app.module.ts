@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ProdutoModule } from './produto/produto.module';
+import { Produto } from './produto/entities/produto.entity';
 
 // conexao com o banco de dados atraves de TypeORM
 @Module({
@@ -11,10 +13,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'root',
       database: 'db_arara_delivery',
-      entities: [],
+      entities: [Produto],
       synchronize: true,
       // logging: true, //opcional
     }),
+    ProdutoModule,
   ],
   controllers: [],
   providers: [],
