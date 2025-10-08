@@ -22,7 +22,7 @@ export class Produto {
   @Column({ length: 300, nullable: false })
   descricao: string;
 
-  @Column({ type: 'text', nullable: false })
+  @Column({ type: 'text', nullable: true })
   foto: string;
 
   
