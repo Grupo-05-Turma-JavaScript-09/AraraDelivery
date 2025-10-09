@@ -30,7 +30,7 @@ export class Produto {
   @Column({ length: 300, nullable: false })
   descricao: string;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ length: 5000, nullable: true })
   foto: string;
 
   @ApiProperty({ type: () => Categoria })
