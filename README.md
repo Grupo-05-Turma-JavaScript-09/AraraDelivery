@@ -1,98 +1,165 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="https://drive.google.com/uc?export=view&id=1CL091RLJE4ygRF8oOssy7TZi62NoV_aV" width="300" alt="Descrição da imagem">
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Arara Delivery 🍽️
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 1. Visão Geral
 
-## Description
+O **Arara Delivery** é uma aplicação web desenvolvida para gerenciar pedidos de alimentos de forma simples, intuitiva e eficiente. Com ele, é possível cadastrar usuários, produtos e categorias, além de permitir buscas filtradas por tipo de produto (ex: fit, natural, caseira, congelados).
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+O projeto foi desenvolvido em NestJS com integração ao banco de dados MySQL, aplicando os conceitos de arquitetura modular e boas práticas aprendidas ao longo do Bootcamp Generation Brasil.
 
-## Project setup
+**Repositório oficial:** [GitHub](https://github.com/Grupo-05-Turma-JavaScript-09/AraraDelivery.git)
 
-```bash
-$ npm install
-```
+### 1.1 Sobre o Desenvolvimento
 
-## Compile and run the project
+O sistema foi construído com base em um modelo de API RESTful, integrando módulos independentes para facilitar a manutenção e escalabilidade. Além das operações CRUD completas, o projeto conta com um método especial de busca por nome, que permite ao cliente visualizar rapidamente produtos específicos de uma categoria.
 
-```bash
-# development
-$ npm run start
+## 2. Tecnologias Utilizadas 🛠️
 
-# watch mode
-$ npm run start:dev
+- **Node.js / TypeScript**
+- **NestJS** — framework escalável para aplicações de backend
+- **TypeORM** — ORM para comunicação com o banco relacional
+- **MySQL** — banco de dados relacional
+- **bcryptjs** — criptografia de senhas
+- **Swagger** — documentação e testes dos endpoints
+- **Insomnia** — para simulações de requisições HTTP
+- **Render** - deploy
 
-# production mode
-$ npm run start:prod
-```
+## 3. DER (Diagrama Entidade-Relacionamento)
 
-## Run tests
+**Relacionamentos:**
+- Um usuário pode cadastrar vários produtos
+- Cada produto pertence a uma categoria
+- As categorias definem o tipo dos produtos (fit, natural, caseira, congelados etc.)
 
-```bash
-# unit tests
-$ npm run test
+## 4. Estrutura de Pastas 📁
 
-# e2e tests
-$ npm run test:e2e
+````
+ARARADELIVERY/
+├── 📁 src/
+│ ├── 📁 auth/
+│ │ ├── 📁 categoria/
+│ │ │ ├── 📁 controllers/
+│ │ │ ├── 📁 entities/
+│ │ │ ├── 📁 services/
+│ │ │ └── categoria.module.ts
+│ │
+│ ├── 📁 data/
+│ │ ├── 📁 produto/
+│ │ │ ├── 📁 controllers/
+│ │ │ ├── 📁 entities/
+│ │ │ ├── 📁 services/
+│ │ │ └── produto.module.ts
+│ │ ├── 📁 usuario/
+│ │ │ ├── 📁 controllers/
+│ │ │ ├── 📁 entities/
+│ │ │ ├── 📁 services/
+│ │ │ └── usuario.module.ts
+│ │
+│ ├── app.controller.ts
+│ ├── app.module.ts
+│ └── main.ts
+├── 📁 test/
+├── package.json
+└── arquivos de configuração…
+````
 
-# test coverage
-$ npm run test:cov
-```
+- **src/** — código-fonte da aplicação NestJS
+- **test/** — testes unitários / de integração
+- Arquivos de configuração (ESLint, Prettier, tsconfig, nest-cli)
 
-## Deployment
+## 5. Instalação e Execução 🚀
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+### Pré-requisitos
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+- Node.js instalado
+- MySQL configurado e em execução
+- Arquivo .env com as variáveis de conexão
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+### Passos
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+1. **Clonar o repositório**
+   ```bash
+   git clone https://github.com/Grupo-05-Turma-JavaScript-09/AraraDelivery.git
 
-## Resources
 
-Check out a few resources that may come in handy when working with NestJS:
+Entrar na pasta do projeto
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+bash
+cd AraraDelivery
+Instalar dependências
 
-## Support
+bash
+npm install
+Rodar o projeto em modo de desenvolvimento
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+bash
+npm run start:dev
 
-## Stay in touch
+## 6. Endpoints Principais 🔌
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### 👥 Módulo Usuários
 
-## License
+Método	Endpoint	Descrição
+POST	/usuarios	Cria um novo usuário com os dados enviados
+GET	/usuarios	Retorna todos os usuários cadastrados
+GET	/usuarios/:id	Retorna um usuário específico pelo ID
+PUT	/usuarios	Atualiza um usuário existente
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+### 🍔 Módulo Produtos
+
+Método	Endpoint	Descrição
+GET	/produtos	Retorna todos os produtos
+GET	/produtos/:id	Retorna produto por ID
+POST	/produtos	Cria novo produto
+PUT	/produtos/:id	Atualiza um produto por ID
+DELETE	/produtos/:id	Remove produto por ID
+GET	/produtos/tipo/:tipo	Busca produtos pelo tipo (atributo especial)
+
+### 📑 Módulo Categorias
+
+Método	Endpoint	Descrição
+GET	/categorias	Retorna todas as categorias cadastradas
+GET	/categorias/:id	Retorna uma categoria por ID
+POST	/categorias	Cria uma nova categoria
+PUT	/categorias/:id	Atualiza categoria por ID
+DELETE	/categorias/:id	Remove categoria por ID
+7. Contribuir Para o Repositório 🤝
+Faça um fork do repositório no GitHub
+
+Crie uma branch: feature/nova-feature
+
+Faça commits descritivos
+
+Envie um pull request explicando a modificação
+
+## 👥 Equipe de Desenvolvimento 
+
+Nome e	Atribuições
+
+ - Ayron Santana -	Implementou a segurança do sistema. Colaborou na revisão geral antes do deploy.
+ 
+- Emily Mangas -	Desenvolveu o CRUD de categoria. Participou da revisão dos CRUDs e relações. Colaborou na criação do Swagger.
+
+- Eric Silva -	Desenvolveu o CRUD de categoria e de Usuário. Participou da revisão dos CRUDs e relações. Trabalhou na documentação.
+
+- Flavio Serra -	Criou o DER (Diagrama Entidade Relacionamento). Desenvolveu o CRUD de produto. Realizou os testes no Insomnia e Swagger.
+
+- Paula Melo -	Responsável pela criação e estrutura do projeto. Estrutura de Pastas e Arquitetura do Código. Configuração do Ambiente. Conexão com banco de dados. Documentação.
+
+- Sthefany Mattos -	Responsável pelo deploy. Desenvolveu as relações entre as tabelas. Realizou os testes de categoria e usuário. Revisão geral dos CRUDs. Criou a marca do projeto.
+
+## 🎯 Agradecimentos
+Gostaríamos de expressar nossa sincera gratidão à Generation Brasil e a todos os instrutores e facilitadores pelo conhecimento compartilhado, suporte durante o bootcamp e pela oportunidade de desenvolver este projeto.
+
+Agradecemos também a todos os colegas que contribuíram direta ou indiretamente para o crescimento desta aplicação, e a você, por ter interesse em conhecer nosso trabalho!
+
+Equipe Arara Delivery 🦜
+
+
+
+
+
+
